@@ -1,3 +1,4 @@
+*.swp
 *.gem
 *.rbc
 .bundle
@@ -16,3 +17,4 @@ temp/
 .yardoc
 _yardoc
 doc/
+spec/fixtures/modules/*
