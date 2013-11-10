@@ -29,9 +29,11 @@ class tacacsplus (
     }
 
     file { '/etc/tac_plus.conf' :
+        ensure  => present,
         notify  => Service['tac_plus'],
         owner   => root,
         group   => root,
+        mode    => '0644',
         require => Package[$tacplus_pkg],
         content => template('tacacsplus/tac_plus.conf.erb'),
     }
@@ -40,6 +42,7 @@ class tacacsplus (
         ensure  => present,
         owner   => root,
         group   => root,
+        mode    => '0644',
         require => Package[$tacplus_pkg],
         content => template('tacacsplus/tac_plus.erb'),
     }
